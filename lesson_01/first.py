@@ -1,7 +1,7 @@
 ticker = "AAPL"
-price_yesterday = "182.5"
-price_today = "187.3"
+price = 187.3
+simple_return = 0.0263
 
-simple_return = (float(price_today) - float(price_yesterday)) / float(price_yesterday)
-
-print(ticker + ":", round(simple_return, 4))
+print(f"ticker: {ticker}")
+print(f"price: {price}")
+print(f"simple_return: {simple_return:.2%}")
