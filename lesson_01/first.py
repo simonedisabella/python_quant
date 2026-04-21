@@ -1,27 +1,27 @@
-import math
+raw_price1 = "1,234.50"
+raw_price2 = " 98.75 "
+raw_return1 = "2.63%"
+raw_return2 = "-1.45%"
+raw_ticker = " msft "
+missing = "N/A"
 
-prices = [100.0, 102.0, 101.5, 104.0, 103.2]
+# pulizia
 
-simple_return_day2 = (prices[1] - prices[0]) / prices[0]
-simple_return_day3 = (prices[2] - prices[1]) / prices[1]
-simple_return_day4 = (prices[3] - prices[2]) / prices[2]
-simple_return_day5 = (prices[4] - prices[3]) / prices[3]
+ticker = raw_ticker.strip().upper()
+price = float(raw_price1.replace(",", ""))
+price2 = float(raw_price2.strip())
+returns1 = float(raw_return1.replace("%", "")) / 100
+returns2 = float(raw_return2.replace("%", "")) / 100
 
-log_return_day2 = math.log(prices[1] / prices[0])
-log_return_day3 = math.log(prices[2] / prices[1])
-log_return_day4 = math.log(prices[3] / prices[2])
-log_return_day5 = math.log(prices[4] / prices[3])
+if missing == "N/A":
+    miss = None
+else:
+    miss = float(miss)
 
 
-print(
-    "Day 2 | Simple:", round(simple_return_day2, 4), "| Log:", round(log_return_day2, 4)
-)
-print(
-    "Day 3 | Simple:", round(simple_return_day3, 4), "| Log:", round(log_return_day3, 4)
-)
-print(
-    "Day 4 | Simple:", round(simple_return_day4, 4), "| Log:", round(log_return_day4, 4)
-)
-print(
-    "Day 5 | Simple:", round(simple_return_day5, 4), "| Log:", round(log_return_day5, 4)
-)
+print(f"Ticker: {ticker}")
+print(f"prezzo: {price}")
+print(f"prezzo: {price2}")
+print(f"return: {returns1:.2%}")
+print(f"return: {returns2:.2%}")
+print(f"missing: {miss}")
