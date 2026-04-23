@@ -1,27 +1,5 @@
-raw_price1 = "1,234.50"
-raw_price2 = " 98.75 "
-raw_return1 = "2.63%"
-raw_return2 = "-1.45%"
-raw_ticker = " msft "
-missing = "N/A"
+msft_prices = [310.2, 312.8, 311.5, 315.3, 314.1, 318.6, 317.2, 320.4, 319.8, 322.1]
 
-# pulizia
-
-ticker = raw_ticker.strip().upper()
-price = float(raw_price1.replace(",", ""))
-price2 = float(raw_price2.strip())
-returns1 = float(raw_return1.replace("%", "")) / 100
-returns2 = float(raw_return2.replace("%", "")) / 100
-
-if missing == "N/A":
-    miss = None
-else:
-    miss = float(miss)
-
-
-print(f"Ticker: {ticker}")
-print(f"prezzo: {price}")
-print(f"prezzo: {price2}")
-print(f"return: {returns1:.2%}")
-print(f"return: {returns2:.2%}")
-print(f"missing: {miss}")
+print(f"Prima settimana: {msft_prices[0:5]}")
+print(f"Seconda settimana: {msft_prices[-5:]}")
+print(f"giorni 3-7: {msft_prices[2:7]}")
